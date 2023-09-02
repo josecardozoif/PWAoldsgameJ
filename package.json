@@ -1,15 +1,19 @@
 {
   "name": "pwaoldsgamej",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simulação de Jogo da Velha por uma PWA",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"serve ."
+    "serve": "serve ."
   },
   "author": "josecardozoif",
   "license": "ISC",
   "dependencies": {
     "serve": "^14.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josecardozoif/PWAoldsgameJ.git"
   }
 }
