@@ -9,6 +9,9 @@
   },
   "author": "josecardozoif",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josecardozoif/PWAoldsgameJ/issues"
+  },
   "dependencies": {
     "serve": "^14.2.1"
   },

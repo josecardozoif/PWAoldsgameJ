@@ -18,10 +18,36 @@
 
     <div>
         <label>Jogador 1:</label>
-        <input type="text" />
+        <input type="text" id="jogador1" />
 
         <label>Jogador 2:</label>
-        <input type="text" />
+        <input type="text" id="jogador2" />
+
+        <input type="button" value="Começar" onclick="iniciarJogo()"/>
+    </div>
+
+    <h2 id="jogadorAtual"></h2>
+
+    <div id="jogo">
+        <table>
+            <tr border="1">
+                <td onclick="posicao(this, 1);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+                <td onclick="posicao(this, 2);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+                <td onclick="posicao(this, 3);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+            </tr>
+
+            <tr border="1">
+                <td onclick="posicao(this, 4);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+                <td onclick="posicao(this, 5);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+                <td onclick="posicao(this, 6);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+            </tr>
+
+            <tr border="1">
+                <td onclick="posicao(this, 7);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+                <td onclick="posicao(this, 8);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+                <td onclick="posicao(this, 9);" onmouseover="this.style.backgroundColor = 'blue'" onmousemove="this.style.backgroundColor = 'red'"></td>
+            </tr>
+        </table>
     </div>
 
     <script src="script.js"></script>
