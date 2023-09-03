@@ -37,6 +37,18 @@ setJogadorAtual = () => {
     document.getElementById('jogadorAtual').innerHTML = 'Jogador Atual: ' + jogadorAtual.nome;
 }
 
+setVitoria1 = () => {
+    document.getElementById('resultado').innerHTML = jogador1.nome + ' Venceu!';
+}
+
+setVitoria2 = () => {
+    document.getElementById('resultado').innerHTML = jogador2.nome + ' Venceu!';
+}
+
+setEmpate = () => {
+    document.getElementById('resultado').innerHTML = 'Empate. Tente Novamente.';
+}
+
 tabuleiroCheio = () => {
     var preenchidos = 0;
     for(var i = 0; i < tabuleiro.length; i++)
@@ -48,11 +60,11 @@ tabuleiroCheio = () => {
 naHorizontal = () => {
     for(var i = 0; i < 7; i += 3){
         if(tabuleiro[i] == 'X' && tabuleiro[i + 1] == 'X' && tabuleiro[i + 2] == 'X'){
-            document.getElementById('resultado').innerHTML = jogador1.nome + ' Venceu!';
+            setVitoria1();
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 1] == 'O' && tabuleiro[i + 2] == 'O'){
-            document.getElementById('resultado').innerHTML = jogador2.nome + ' Venceu!';
+            setVitoria2();
             reset();
         }
     }
@@ -61,11 +73,11 @@ naHorizontal = () => {
 naVertical = () => {
     for(var i = 0; i < 3; i++){
         if(tabuleiro[i] == 'X' && tabuleiro[i + 3] == 'X' && tabuleiro[i + 6] == 'X'){
-            document.getElementById('resultado').innerHTML = jogador1.nome + ' Venceu!';
+            setVitoria1();
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 3] == 'O' && tabuleiro[i + 6] == 'O'){
-            document.getElementById('resultado').innerHTML = jogador2.nome + ' Venceu!';
+            setVitoria2();
             reset();
         }
     }
@@ -74,11 +86,11 @@ naVertical = () => {
 naDiagonal = () => {
     if ((tabuleiro[0] == 'X' && tabuleiro[4] == 'X' && tabuleiro[8] == 'X') || 
     (tabuleiro[2] == 'X' && tabuleiro[4] == 'X' && tabuleiro[6] == 'X')){
-        document.getElementById('resultado').innerHTML = jogador1.nome + ' Venceu!';
+        setVitoria1();
         reset();
     } else if ((tabuleiro[0] == 'O' && tabuleiro[4] == 'O' && tabuleiro[8] == 'O') || 
     (tabuleiro[2] == 'O' && tabuleiro[4] == 'O' && tabuleiro[6] == 'O')){
-        document.getElementById('resultado').innerHTML = jogador2.nome + ' Venceu!';
+        setVitoria2();
         reset();
     }
 }
@@ -97,7 +109,12 @@ posicao = (cel, pos) => {
     naDiagonal();
 
     if(tabuleiroCheio()){
-        document.getElementById('resultado').innerHTML = 'Empate. Tente Novamente.';
+        setEmpate();
         reset();
     }
 }
+
+document.getElementsByTagName('form')[0].addEventListener('submit', (e) => {
+    e.preventDefault();
+})
+
