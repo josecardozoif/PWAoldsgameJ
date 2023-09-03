@@ -48,9 +48,11 @@ tabuleiroCheio = () => {
 naHorizontal = () => {
     for(var i = 0; i < 7; i += 3){
         if(tabuleiro[i] == 'X' && tabuleiro[i + 1] == 'X' && tabuleiro[i + 2] == 'X'){
+            document.getElementById('resultado').innerHTML = jogador1.nome + ' Venceu!';
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 1] == 'O' && tabuleiro[i + 2] == 'O'){
+            document.getElementById('resultado').innerHTML = jogador2.nome + ' Venceu!';
             reset();
         }
     }
@@ -59,9 +61,11 @@ naHorizontal = () => {
 naVertical = () => {
     for(var i = 0; i < 3; i++){
         if(tabuleiro[i] == 'X' && tabuleiro[i + 3] == 'X' && tabuleiro[i + 6] == 'X'){
+            document.getElementById('resultado').innerHTML = jogador1.nome + ' Venceu!';
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 3] == 'O' && tabuleiro[i + 6] == 'O'){
+            document.getElementById('resultado').innerHTML = jogador2.nome + ' Venceu!';
             reset();
         }
     }
@@ -70,9 +74,11 @@ naVertical = () => {
 naDiagonal = () => {
     if ((tabuleiro[0] == 'X' && tabuleiro[4] == 'X' && tabuleiro[8] == 'X') || 
     (tabuleiro[2] == 'X' && tabuleiro[4] == 'X' && tabuleiro[6] == 'X')){
+        document.getElementById('resultado').innerHTML = jogador1.nome + ' Venceu!';
         reset();
     } else if ((tabuleiro[0] == 'O' && tabuleiro[4] == 'O' && tabuleiro[8] == 'O') || 
     (tabuleiro[2] == 'O' && tabuleiro[4] == 'O' && tabuleiro[6] == 'O')){
+        document.getElementById('resultado').innerHTML = jogador2.nome + ' Venceu!';
         reset();
     }
 }
@@ -84,13 +90,14 @@ posicao = (cel, pos) => {
 
         (jogadorAtual.forma == 0) ? jogadorAtual = jogador2 : jogadorAtual = jogador1;
         setJogadorAtual();
-    }
+    } else document.getElementById('resultado').innerHTML = 'Célula já marcada.';
 
     naHorizontal();
     naVertical();
     naDiagonal();
 
     if(tabuleiroCheio()){
+        document.getElementById('resultado').innerHTML = 'Empate. Tente Novamente.';
         reset();
     }
 }
