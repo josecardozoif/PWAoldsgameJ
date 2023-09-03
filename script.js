@@ -63,7 +63,7 @@ naHorizontal = () => {
             setVitoria1();
             reset();
         }
-        if (tabuleiro[i] == 'O' && tabuleiro[i + 1] == 'O' && tabuleiro[i + 2] == 'O'){
+        if (tabuleiro[i] == '0' && tabuleiro[i + 1] == '0' && tabuleiro[i + 2] == '0'){
             setVitoria2();
             reset();
         }
@@ -76,7 +76,7 @@ naVertical = () => {
             setVitoria1();
             reset();
         }
-        if (tabuleiro[i] == 'O' && tabuleiro[i + 3] == 'O' && tabuleiro[i + 6] == 'O'){
+        if (tabuleiro[i] == '0' && tabuleiro[i + 3] == '0' && tabuleiro[i + 6] == '0'){
             setVitoria2();
             reset();
         }
@@ -88,8 +88,8 @@ naDiagonal = () => {
     (tabuleiro[2] == 'X' && tabuleiro[4] == 'X' && tabuleiro[6] == 'X')){
         setVitoria1();
         reset();
-    } else if ((tabuleiro[0] == 'O' && tabuleiro[4] == 'O' && tabuleiro[8] == 'O') || 
-    (tabuleiro[2] == 'O' && tabuleiro[4] == 'O' && tabuleiro[6] == 'O')){
+    } else if ((tabuleiro[0] == '0' && tabuleiro[4] == '0' && tabuleiro[8] == '0') || 
+    (tabuleiro[2] == '0' && tabuleiro[4] == '0' && tabuleiro[6] == '0')){
         setVitoria2();
         reset();
     }
