@@ -7,13 +7,12 @@
 
 body{
     font-family: 'Chakra Petch', sans-serif;
-    width: 100%;
     background-color: #b9a36e;
     text-align: center;
 }
 
 .container {
-    height: 90vh;
+    height: 10vh;
   }
 
 h1 {
@@ -30,7 +29,7 @@ label {
 }
 
 table {
-    width: 550px; 
+    width: 350px; 
     height: 350px; 
     border: 1px solid black;
 }
@@ -79,6 +78,7 @@ input[type=button] {
     margin-left: 25%;
     margin-right: 25%;
     text-align: center;
+    margin-top: 2%;
 }
 
 #jogador1 {
