@@ -1,5 +1,5 @@
 let cacheName = "pwaoldsgamej";
-let filesToCache = ["/", "/index.html", "/css/style.css", "/js/script.js"];
+let filesToCache = ["/", "/index.html", "/style.css", "/script.js"];
 
 self.addEventListener("install", (e) => {
     e.waitUntil(
